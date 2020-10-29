@@ -209,7 +209,7 @@ class Topic < ActiveRecord::Base
       @user.name = params['customer']['fullName']
       @user.login = params['customer']['emailAddress'].split("@")[0]
       @user.email = params['customer']['emailAddress']
-      # @user.home_phone = params[:topic][:user][:home_phone]
+      @user.work_phone = params['customer']['work_phone']
       @user.password = User.create_password
       @user.save
     end
